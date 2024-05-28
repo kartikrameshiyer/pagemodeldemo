@@ -1,0 +1,17 @@
+{
+  "name": "pagemodeldemo",
+  "version": "1.0.0",
+  "description": "Page object model ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kartik",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "cucumber": "^6.0.7",
+    "math": "^0.0.3",
+    "testcafe": "^3.6.0"
+  }
+}
