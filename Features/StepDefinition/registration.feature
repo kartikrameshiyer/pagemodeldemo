@@ -2,6 +2,7 @@ Feature: Registration Feature
 
         As a Vistor I can create a new account by the registration. 
 
+
 Scenario: Registration
     Given I open the registration page
     When I select the gender
