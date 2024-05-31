@@ -80,7 +80,7 @@ test('Place Order E2E Test', async t => {
                 .expect(CheckoutPage.orderConfirmationMessage.exists).ok()
                 .click(CheckoutPage.viewOrderDetailsLink)
                 .click(HomePage.myAccountLink)
-                .debug();
+                
                 //.click(Myorderpage.orderslink);
 
 });
