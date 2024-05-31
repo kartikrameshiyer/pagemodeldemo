@@ -12,6 +12,8 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "cucumber": "^6.0.7",
     "math": "^0.0.3",
-    "testcafe": "^3.6.0"
+    "testcafe": "^3.6.0",
+    "testcafe-reporter-allure": "^1.0.5",
+    "testcafe-reporter-html": "^1.4.6"
   }
 }

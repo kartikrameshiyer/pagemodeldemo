@@ -18,7 +18,7 @@ class HomePage {
         this.CartLink = Selector('a').withText('Shopping cart')
         this.myAccountLink = Selector('a').withText('My account')
         this.addToCartBtnOnHmPg =  Selector('button.button-2.product-box-add-to-cart-button[type="button"][onclick*="addproducttocart_catalog"]')
-        this.macbookLink = Selector('a[href="/apple-macbook-pro-13-inch"]');
+        this.macbookLink = Selector('.button-2.product-box-add-to-cart-button');
         
     }
     get productSearch() {

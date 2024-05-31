@@ -5,9 +5,10 @@ import RegisterPage from "../pages/registerPageOld";
 import CustomerPage from "../pages/customerpage";
 import math from "math";
 import SearchResultsPage from "../pages/SearchResultsPage";
-import ProdcutDetailsPage from "../pages/ProdcutDetailsPage";   
+import ProductDetailsPage from "../pages/ProductDetailsPage"; 
 import CheckoutPage from "../pages/CheckoutPage";
 import cartPage from "../pages/cartPage";
+
 //import Myorderpage from "../pages/Myorderpage";
 
 const URL = "https://demo.nopcommerce.com/";
@@ -52,20 +53,21 @@ test('Place Order E2E Test', async t => {
             .click(SearchResultsPage.productTitle)
             .expect(getURL()).contains('apple-macbook-pro-13-inch')
             .click(HomePage.macbookLink)
-            .debug()
             .wait(3000)
-            .selectText(ProdcutDetailsPage.productQuantity).pressKey('delete')
-            .typeText(ProdcutDetailsPage.productQuantity, '3')
-            .click(ProdcutDetailsPage.addToCartBtn)
-            .expect(ProdcutDetailsPage.sucessMessage.exists).ok()
+            //.selectText(ProductDetailsPage.productQuantity).pressKey("delete")
+            .typeText(ProductDetailsPage.productQuantity, '3')
+            .pressKey('enter')
+            .click(ProductDetailsPage.addToCartBtn)
+            .expect(ProductDetailsPage.sucessMessage.exists).ok()
             .wait(3000)
             .click(HomePage.CartLink)
             .click(cartPage.termsLabel)
-            .click(CustomerPage.checkoutBtn)
+            .click(cartPage.checkoutButton)
             .expect(getURL()).contains('checkout');
 
-            await CheckoutPage.selectCountry('usa' );
-            await t
+        await CheckoutPage.selectCountry('United States' );
+        await t
+                .typeText(CheckoutPage.stateList, 'North Carolina')
                 .typeText(CheckoutPage.cityTxt, 'lillington')
                 .typeText(CheckoutPage.addressTxt, '244 Exectuive Center')
                 .typeText(CheckoutPage.zipTxt, '27654')
@@ -84,9 +86,6 @@ test('Place Order E2E Test', async t => {
 
 });
 
-test("chnage currency test", async t => {
-    await t
-        .click(HomePage.currecyList)
-        .click(Selector('option').withText('Euro'))
-        .expect(HomePage.currecyList.value).eql('EUR');
+test("Change Currency Test", async (t) => {
+    await HomePage.changeCurrency('Euro')
 });
