@@ -1,6 +1,6 @@
 import { ClientFunction } from "testcafe";
 import HomePage from "../pages/homepage";
-import RegisterPage from "../pages/registerPage";
+import RegisterPage from "../pages/registerPageOld";
 import LoginPage from "../pages/loginPage";
 import CustomerPage from "../pages/customerpage";
 import math from "math";
